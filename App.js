@@ -1,10 +1,11 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TextInput, Button, FlatList} from "react-native";
+import { StyleSheet, Text, View, FlatList} from "react-native";
 import Constants from "expo-constants";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/database";
+import {Button, Input} from 'react-native-elements'
 
 const firebaseConfig = {
   apiKey: "AIzaSyDmUwfNjLPX0rwn0eLNyfamgMZpezwBV5g",
@@ -17,8 +18,9 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-
 export default class App extends React.Component {
+
+  
   constructor(props) {
     super(props);
 
@@ -73,12 +75,21 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.msgBox}>
-          <TextInput
+          <Input
+            style={styles.input}
             placeholder="Enter your message"
+            leftIcon={{ type: "font-awesome", name: "comment" }}
             onChangeText={(text) => this.setState({ message: text })}
             style={styles.txtInput}
           />
-          <Button title="Send" onPress={this.addItem} />
+          <Button
+            // titleStyle = {{
+            //   fontSize: 14
+            // }}
+            // style={styles.button}
+            title="Post"
+            onPress={this.addItem}
+          />
         </View>
         <FlatList
           data={this.state.messages}
@@ -102,11 +113,16 @@ const styles = StyleSheet.create({
   msgBox: {
     flexDirection: "row",
     padding: 20,
+    justifyContent: "center",
     backgroundColor: "#fff",
   },
   txtInput: {
     flex: 1,
   },
+  // button: {
+  //   height: 50,
+  //   width: 50,
+  // },
   listItemContainer: {
     backgroundColor: "#fff",
     margin: 5,
