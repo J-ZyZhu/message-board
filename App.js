@@ -83,10 +83,13 @@ export default class App extends React.Component {
             style={styles.txtInput}
           />
           <Button
-            // titleStyle = {{
-            //   fontSize: 14
-            // }}
-            // style={styles.button}
+            titleStyle = {{
+              fontSize: 13
+            }}
+            style={{
+            height: 50,
+            width: 60,
+            }}
             title="Post"
             onPress={this.addItem}
           />
@@ -113,16 +116,13 @@ const styles = StyleSheet.create({
   msgBox: {
     flexDirection: "row",
     padding: 20,
-    justifyContent: "center",
+    justifyContent: 'space-around',
     backgroundColor: "#fff",
   },
   txtInput: {
     flex: 1,
   },
-  // button: {
-  //   height: 50,
-  //   width: 50,
-  // },
+  
   listItemContainer: {
     backgroundColor: "#fff",
     margin: 5,
