@@ -39,7 +39,6 @@ export default class App extends React.Component {
       .child("messages")
       .once("value", (snapshot) => {
         const data = snapshot.val();
-        console.log(data);
         if (data) {
           const initMessages = [];
           Object.keys(data).forEach((message) =>
@@ -101,6 +100,7 @@ export default class App extends React.Component {
               <Text style={styles.listItem}>{item}</Text>
             </View>
           )}
+          keyExtractor={(item, index) => index.toString()}
         />
       </View>
     );
