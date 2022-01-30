@@ -15,6 +15,6 @@ Simple mobile app to let usersend message on the messsage board.
 ```
 $ npm i
 $ npm start
-Note: first downlaod Expo Go for free from App Store, then you can scan the QR code to view the App on ipohne
+Note: first downlaod Expo Go for free from App Store, then you can scan the QR code to view the App on iphone, or use the simulator on your laptop.
 ```
 
